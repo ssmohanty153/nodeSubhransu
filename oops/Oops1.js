@@ -26,12 +26,29 @@ console.log(iphone);
 //Product { name: 'Iphone15', price: '51000' }
 
 iphone.display();
+
 function product(n, p) {
   this.name = n;
   this.price = p;
-  return this;
+  return this; // you not return anythings with new key words it will return name and price
 }
 
 let p1 = new product("poco", "16500");
 
 console.log(p1); //product { name: 'poco', price: '16500' }
+
+function product2(n, p) {
+  this.name = n;
+  this.price = p;
+  //return this; // you not return anythings with new key words it will return name and price
+
+  this.display = function () {
+    console.log(this.name, this.price);
+  };
+}
+
+let p2 = product2("poco", "16500");
+
+console.log(p2); //undefined
+
+p2.display();//error with using new you can access to p2
