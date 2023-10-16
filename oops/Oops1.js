@@ -51,4 +51,22 @@ let p2 = product2("poco", "16500");
 
 console.log(p2); //undefined
 
-p2.display();//error with using new you can access to p2
+// p2.display(); //error with using new you can access to p2
+
+const obj1 = {
+  name: "Subhransu",
+  display: function () {
+    console.log(this); //{ name: 'Subhransu', display: [Function: display] }
+  },
+};
+
+const obj2 = {
+  name: "Mohanty",
+  display: () => {
+    console.log(this); //{}
+  },
+};
+
+obj1.display();
+
+obj2.display();
